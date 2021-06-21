@@ -1,7 +1,10 @@
 const express = require('express')
+const moment = require('moment')
 const app = express()
 
 app.use(express.json())
+
+const registrationDate = moment().format('DD.MM.YYYY');
 
 
 let members = [
@@ -76,7 +79,7 @@ app.post('/api/members', (request, response) => {
         id: generateId(),
         name: body.name,
         email: body.email,
-        date: new Date(),
+        date: registrationDate
     }
 
     members = members.concat(member)
