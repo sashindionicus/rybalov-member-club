@@ -1,0 +1,27 @@
+{
+  "name": "rybalov-member-club",
+  "version": "1.0.0",
+  "description": "“Member Club” is a web-application which allows to add members to the Club and view list of club members.",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sashindionicus/rybalov-member-club.git"
+  },
+  "author": "Alex Rybalov <aorybalov@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sashindionicus/rybalov-member-club/issues"
+  },
+  "homepage": "https://github.com/sashindionicus/rybalov-member-club#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
