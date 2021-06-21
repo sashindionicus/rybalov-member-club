@@ -1,11 +1,15 @@
 const express = require('express')
-const moment = require('moment')
 const app = express()
 
 app.use(express.json())
 
-const registrationDate = moment().format('DD.MM.YYYY');
-
+const cors = require('cors');
+const corsOptions ={
+    origin:'http://localhost:3000', 
+    credentials:true,            
+    optionSuccessStatus:200
+}
+app.use(cors(corsOptions));
 
 let members = [
     {
@@ -33,13 +37,6 @@ let members = [
         date: "15.05.2021"
     },
 ]
-
-const generateId = () => {
-    const maxId = members.length > 0
-      ? Math.max(...members.map(n => n.id))
-      : 0
-    return maxId + 1
-}
 
 app.get('/api/members', (req, res) => {
     res.json(members)
@@ -76,10 +73,10 @@ app.post('/api/members', (request, response) => {
     }
 
     const member = {
-        id: generateId(),
+        id: body.id,
         name: body.name,
         email: body.email,
-        date: registrationDate
+        date: body.date
     }
 
     members = members.concat(member)
